@@ -2,11 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const twilio = require('twilio');
+const cors = require('cors');
 
 const token = process.env.TWILIO_AUTH_TOKEN;
 const sid = process.env.TWILIO_ACCOUNT_SID;
 const from = process.env.TWILIO_FROM_NUMBER;
 
+app.use(cors());
 app.use(bodyParser.json());
 
 const client = twilio(sid, token, {
