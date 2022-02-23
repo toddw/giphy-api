@@ -13,6 +13,12 @@ const client = twilio(sid, token, {
   lazyLoading: true
 });
 
+app.get("/", (req, res) => {
+  res.end(
+    "Twilio API POST to /sms {'to': '+1.......', '': 'body': '…message…'}"
+  );
+});
+
 app.post("/sms", (req, res) => {
   (async () => {
     const message = await client.messages.create({
