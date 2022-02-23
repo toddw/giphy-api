@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 app.post('/sms', (req, res) => {
   (async () => {
     const message = await client.messages.create({
-      body: req.body.message,
+      mediaUrl: req.body.message,
       from,
       to: req.body.to,
     });
