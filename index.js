@@ -15,7 +15,7 @@ const client = twilio(sid, token, {
 
 app.get('/', (req, res) => {
   res.end(
-    "Twilio API POST to /sms {'to': '+1.......', '': 'body': '...message...'}",
+    "Twilio API POST to /sms {'to': '+1.......', '': 'message': '...message...'}",
   );
 });
 
